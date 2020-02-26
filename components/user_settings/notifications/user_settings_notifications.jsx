@@ -10,7 +10,7 @@ import * as Utils from 'utils/utils.jsx';
 import SettingItemMax from 'components/setting_item_max.jsx';
 import SettingItemMin from 'components/setting_item_min';
 
-import DesktopNotificationSettings from './desktop_notification_settings.jsx';
+import DesktopNotificationSettings from './desktop_notification_settings';
 import EmailNotificationSetting from './email_notification_setting';
 import ManageAutoResponder from './manage_auto_responder.jsx';
 
