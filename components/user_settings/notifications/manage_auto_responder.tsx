@@ -11,19 +11,12 @@ import {localizeMessage} from 'utils/utils';
 
 const MESSAGE_MAX_LENGTH = 200;
 type Props = {
-    //autoResponderActive: PropTypes.bool.isRequired,
     autoResponderActive: boolean;
-    //autoResponderMessage: PropTypes.string.isRequired,
     autoResponderMessage: string;
-    //updateSection: PropTypes.func.isRequired,
     updateSection: () => void;
-    //setParentState: PropTypes.func.isRequired,
     setParentState: (key: string | null, value: any) => null;
-    //submit: PropTypes.func.isRequired,
     submit: () => void;
-    //saving: PropTypes.bool.isRequired,
     saving: boolean;
-    //error: PropTypes.string,
     error: string;
 
 };
