@@ -32,6 +32,9 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         focused: false,
     };
 
+    /*
+    * Simple test to ensure that max settings matches snapshot
+    */
     test('should match snapshot, on max setting', () => {
         const wrapper = shallow(
             <DesktopNotificationSettings {...baseProps}/>
@@ -40,6 +43,9 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(wrapper).toMatchSnapshot();
     });
 
+    /*
+    * Simple test to ensure that minimum settings matches snapshot
+    */
     test('should match snapshot, on min setting', () => {
         const props = {...baseProps, active: false};
         const wrapper = shallow(
@@ -49,6 +55,13 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(wrapper).toMatchSnapshot();
     });
 
+    /*
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to call its handleMinUpdateSection function which in turn should 
+    * call the updateSection function and cancel function passed down by the props. We then use 
+    * toHaveBeenCalledTimes and toHaveBeenCalledWith to check that it in fact was called (the 
+    * right amount of times and with the right args).
+    */
     test('should call props.updateSection and props.cancel on handleMinUpdateSection', () => {
         const props = {...baseProps, updateSection: jest.fn(), cancel: jest.fn()};
         const wrapper = shallow(
@@ -68,6 +81,13 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(props.cancel).toHaveBeenCalledWith();
     });
 
+    /*
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to call its handleMinUpdateSection function which in turn should 
+    * call the updateSection function passed down by the props. We then use toHaveBeenCalledTimes 
+    * and toHaveBeenCalledWith to check that updateSection in fact was called (the right amount 
+    * of times and with the right args).
+    */
     test('should call props.updateSection on handleMaxUpdateSection', () => {
         const props = {...baseProps, updateSection: jest.fn()};
         const wrapper = shallow(
@@ -83,6 +103,13 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(props.updateSection).toHaveBeenCalledWith('desktop');
     });
 
+    /*
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to call its handleOnChange function which in turn should create
+    * a change event, handleOnChange then call setParentState which is passed down by props.
+    * We then use toHaveBeenCalledTimes and toHaveBeenCalledWith to check that setParentState in 
+    * fact was called (the right amount of times and with the right args).
+    */
     test('should call props.setParentState on handleOnChange', () => {
         const props = {...baseProps, setParentState: jest.fn()};
         const wrapper = shallow(
@@ -99,6 +126,12 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(props.setParentState).toHaveBeenCalledWith('dataKey', 'dataValue');
     });
 
+    /*
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to call its buildMaximizedSetting function which in turn should 
+    * call activity which is passed down by props. We then use toMatchSnapshot to check that 
+    * the snapshot matches).
+    */
     test('should match snapshot, on buildMaximizedSetting', () => {
         const wrapper = shallow(
             <DesktopNotificationSettings {...baseProps}/>
@@ -110,6 +143,12 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
         expect(wrapper.instance().buildMaximizedSetting()).toMatchSnapshot();
     });
 
+    /*
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to call its buildMinimizedSetting function which in turn should 
+    * call activity which is passed down by props. We then use toMatchSnapshot to check that 
+    * the snapshot matches).
+    */
     test('should match snapshot, on buildMinimizedSetting', () => {
         const wrapper = shallow(
             <DesktopNotificationSettings {...baseProps}/>
