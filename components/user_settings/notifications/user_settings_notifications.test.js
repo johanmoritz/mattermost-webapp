@@ -22,6 +22,11 @@ describe('components/user_settings/display/UserSettingsDisplay', () => {
         },
     };
 
+    /**
+     * Creates a ShallowWrapper object that contains a UserSettingsNotifications object. By doing this, we are able to
+     * call its handleSubmit function which in turn should call the updateMe function passed down by the props. We then use
+     * toHaveBeenCalled to check that it in fact was called.
+     */
     test('should have called handleSubmit', async () => {
         const props = {...requiredProps, actions: {...requiredProps.actions}};
         const wrapper = shallow(<UserSettingsNotifications {...props}/>);
@@ -30,6 +35,12 @@ describe('components/user_settings/display/UserSettingsDisplay', () => {
         expect(requiredProps.actions.updateMe).toHaveBeenCalled();
     });
 
+    /**
+     * We now change the updateMe function to resolve with a data attribute. This in turn will trigger the if-true part of the
+     * relevant code which then should call the updateSection function. It is also checked that the proper arguments are sent
+     * to the function, which will always be ''. If no data attribute would've been passed, that function
+     * would not run.
+     */
     test('should have called handleSubmit', async () => {
         const updateMe = jest.fn(() => Promise.resolve({data: true}));
 
@@ -41,6 +52,15 @@ describe('components/user_settings/display/UserSettingsDisplay', () => {
         expect(requiredProps.updateSection).toHaveBeenCalledWith('');
     });
 
+    /**
+     * We want to check that the state is reset as mentioned below. handleUpdateSection is
+     * supposed to set the isSaving state to false and a handleCancel function will also be called.
+     * This one in turn calls the getNotificiationsStateFromProps function which will take a look at the passed
+     * arguments to our user props, where we set 'desktop' to 'on', and give desktopActivity the given value
+     * (which in this case is 'on'). So we check that both of these states are reset to the expected states
+     * and that the dummy function sent in is actually being called, which it should be considering that
+     * the true part of the if-statement should pass.
+     */
     test('should reset state when handleUpdateSection is called', () => {
         const newUpdateSection = jest.fn();
         const updateArg = 'unreadChannels';
