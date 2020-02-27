@@ -20,6 +20,7 @@ type Props = {
     error?: string;
     active?: boolean;
     saving?: boolean;
+    focused?: boolean;
 }
 
 // eslint-disable-next-line react/require-optimization

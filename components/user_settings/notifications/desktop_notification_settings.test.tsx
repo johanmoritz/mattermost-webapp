@@ -6,7 +6,7 @@ import {shallow, ShallowWrapper} from 'enzyme';
 
 import {NotificationLevels} from 'utils/constants';
 
-import DesktopNotificationSettings from 'components/user_settings/notifications/desktop_notification_settings';
+import DesktopNotificationSettings from './desktop_notification_settings';
 
 jest.mock('utils/utils.jsx', () => {
     const original = require.requireActual('utils/utils.jsx');
@@ -93,7 +93,7 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
             currentTarget: {getAttribute: (key: 'data-key' | 'data-value') => {
                 return {'data-key': 'dataKey', 'data-value': 'dataValue'}[key];
             }},
-        });
+        } as React.ChangeEvent<HTMLInputElement>);
 
         expect(props.setParentState).toHaveBeenCalledTimes(1);
         expect(props.setParentState).toHaveBeenCalledWith('dataKey', 'dataValue');
