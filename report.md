@@ -91,9 +91,21 @@ For each team member, how much time was spent in
 
 1. plenary discussions/meetings;
 
+Everyone: 2.5 hours
+
+Took a while to find another project, which we looked for by going through different github repositories that had a lot of issues, good documentation and the 'good first issue' label. Once mattermost was found we started to read up on documentation and set it up.
+
 2. discussions within parts of the group;
 
+Gabriel: 2.5 hours
+
+Discussed report writing with Kasper and typescript conventions in repository with Robin and Adam.
+
 3. reading documentation;
+
+Gabriel: 3 hours
+
+First off I looked through the mattermost [documentation](https://developers.mattermost.com/contribute/webapp/) to learn more about how the project is set up and how components and testing is done in the project which they described quite nicely. After this, I had to take a closer look at how typescript worked, to learn it basically, and related issues to see what the convention was when refactoring.
 
 4. configuration and setup;
 
@@ -106,15 +118,29 @@ To setup the development environment, these dependencies were needed:
 - node.js
 - libpng
 
+Gabriel: 1.5 hours
+
+It went quite smoothly for the most part, but I had some issues with getting the Docker environment to work properly. After reinstalling it and its dependencies it magically started working.
+
 5. analyzing code/output;
+
+Gabriel: 1.5 hours
+
+Analyzing relevant tests and code in order to add documentation for them and to figure out types to use for variables that require them.
 
 6. writing documentation;
 
+Gabriel: 4 hours
+
+Writing code documentation and report
+
 7. writing code;
 
+Gabriel: 5 hours
+
+Not a lot of code had to be changed in my assigned file, just took a little bit for me to figure out how typescript properly worked. Most of my time was spent pair-programming with Kasper on the manage_auto_responder file.
+
 8. running code?
-
-
 
 
 For setting up tools and libraries (step 4), enumerate all dependencies
