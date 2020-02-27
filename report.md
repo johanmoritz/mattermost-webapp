@@ -101,11 +101,19 @@ Gabriel: 2.5 hours
 
 Discussed report writing with Kasper and typescript conventions in repository with Robin and Adam.
 
+Kasper: 2.5 hours
+
+Discussed report writing with Gabriel and to find the actual issue to work on with Robin. 
+
 3. reading documentation;
 
 Gabriel: 3 hours
 
 First off I looked through the mattermost [documentation](https://developers.mattermost.com/contribute/webapp/) to learn more about how the project is set up and how components and testing is done in the project which they described quite nicely. After this, I had to take a closer look at how typescript worked, to learn it basically, and related issues to see what the convention was when refactoring.
+
+Kasper: 4 hours
+
+I went through the same process as Gabriel.
 
 4. configuration and setup;
 
@@ -120,17 +128,23 @@ To setup the development environment, these dependencies were needed:
 
 Gabriel: 1.5 hours
 
-It went quite smoothly for the most part, but I had some issues with getting the Docker environment to work properly. After reinstalling it and its dependencies it magically started working.
+Kasper: 1.5 hours
+
+It went quite smoothly for the most part, but we had some issues with getting the Docker environment to work properly. After reinstalling it and its dependencies it magically started working.
 
 5. analyzing code/output;
 
 Gabriel: 1.5 hours
+
+Kasper: 1.5 hours
 
 Analyzing relevant tests and code in order to add documentation for them and to figure out types to use for variables that require them.
 
 6. writing documentation;
 
 Gabriel: 4 hours
+
+Kasper: 2 hours
 
 Writing code documentation and report
 
@@ -139,6 +153,10 @@ Writing code documentation and report
 Gabriel: 5 hours
 
 Not a lot of code had to be changed in my assigned file, just took a little bit for me to figure out how typescript properly worked. Most of my time was spent pair-programming with Kasper on the manage_auto_responder file.
+
+Kasper: 8 hours
+
+Mainly worked on manage_auto_responder file and manage_auto_responder.test file. Had to change proptypes to Props in manage_auto_responder file and move them outside of the function and update some parameters. There was some issue with some of the props and I had to get in touch with the developers whom gave me premission to add the props in autosize_textarea. Gabrial pair-programmed with me on manage_auto_responder.
 
 8. running code?
 
