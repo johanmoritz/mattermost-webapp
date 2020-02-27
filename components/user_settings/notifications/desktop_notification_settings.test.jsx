@@ -33,7 +33,8 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
     };
 
     /*
-    * Simple test to ensure that max settings matches snapshot
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to check that the maximum settings matches the snapshot.
     */
     test('should match snapshot, on max setting', () => {
         const wrapper = shallow(
@@ -44,7 +45,8 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
     });
 
     /*
-    * Simple test to ensure that minimum settings matches snapshot
+    * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
+    * doing this, we are able to check that the minimum settings matches the snapshot.
     */
     test('should match snapshot, on min setting', () => {
         const props = {...baseProps, active: false};
@@ -83,7 +85,7 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
 
     /*
     * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
-    * doing this, we are able to call its handleMinUpdateSection function which in turn should 
+    * doing this, we are able to call its handleMaxUpdateSection function which in turn should 
     * call the updateSection function passed down by the props. We then use toHaveBeenCalledTimes 
     * and toHaveBeenCalledWith to check that updateSection in fact was called (the right amount 
     * of times and with the right args).
@@ -130,7 +132,7 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
     * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
     * doing this, we are able to call its buildMaximizedSetting function which in turn should 
     * call activity which is passed down by props. We then use toMatchSnapshot to check that 
-    * the snapshot matches).
+    * the snapshot matches.
     */
     test('should match snapshot, on buildMaximizedSetting', () => {
         const wrapper = shallow(
@@ -147,7 +149,7 @@ describe('components/user_settings/notifications/DesktopNotificationSettings', (
     * Creates a ShallowWrapper object that contains a DesktopNotificationSetting object. By 
     * doing this, we are able to call its buildMinimizedSetting function which in turn should 
     * call activity which is passed down by props. We then use toMatchSnapshot to check that 
-    * the snapshot matches).
+    * the snapshot matches.
     */
     test('should match snapshot, on buildMinimizedSetting', () => {
         const wrapper = shallow(
