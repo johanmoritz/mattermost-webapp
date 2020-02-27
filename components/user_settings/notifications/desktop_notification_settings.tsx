@@ -14,7 +14,7 @@ type Props = {
     activity: string;
     sound: string;
     updateSection: (section: string) => void;
-    setParentState: (key: string | null, value: string | null) => void;
+    setParentState: (key: string | null, value: string | boolean | null) => void;
     submit: () => void;
     cancel: () => void;
     error?: string;
@@ -268,6 +268,7 @@ export default class DesktopNotificationSettings extends React.Component<Props> 
             <SettingItemMin
                 title={Utils.localizeMessage('user.settings.notifications.desktop.title', 'Desktop Notifications')}
                 describe={<FormattedMessage {...formattedMessageProps}/>}
+                focused={this.props.focused}
                 section={'desktop'}
                 updateSection={this.handleMinUpdateSection}
             />

@@ -1,7 +1,6 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import Props, {any} from 'prop-types';
 import React, {ChangeEvent} from 'react';
 import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
 
@@ -9,28 +8,28 @@ import AutosizeTextarea from 'components/autosize_textarea';
 import SettingItemMax from 'components/setting_item_max';
 import {localizeMessage} from 'utils/utils';
 
+const MESSAGE_MAX_LENGTH = 200;
+
 type Props = {
     autoResponderActive: boolean;
     autoResponderMessage: string;
-    updateSection: () => void;
-    setParentState: (key: string | null, value: any) => null;
+    updateSection: (section: string) => void;
+    setParentState: (key: string | null, value: string | boolean | null) => void;
     submit: () => void;
     saving: boolean;
-    error: string;
-
+    error?: string;
 };
+
 export default class ManageAutoResponder extends React.PureComponent<Props> {
-
-
-    handleAutoResponderChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleAutoResponderChecked = (e: React.ChangeEvent<HTMLInputElement>): void => {
         this.props.setParentState('autoResponderActive', e.target.checked);
     };
 
-    onMessageChanged = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    onMessageChanged = (e: ChangeEvent<HTMLTextAreaElement>): void => {
         this.props.setParentState('autoResponderMessage', e.target.value);
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             autoResponderActive,
             autoResponderMessage,
@@ -71,9 +70,13 @@ export default class ManageAutoResponder extends React.PureComponent<Props> {
             >
                 <div className='pt-2'>
                     <AutosizeTextarea
+                        style={{resize: 'none'}}
                         id='autoResponderMessageInput'
+                        className='form-control'
+                        rows='5'
                         placeholder={localizeMessage('user.settings.notifications.autoResponderPlaceholder', 'Message')}
                         value={autoResponderMessage}
+                        maxLength={MESSAGE_MAX_LENGTH}
                         onChange={this.onMessageChanged}
                     />
                     {serverError}
