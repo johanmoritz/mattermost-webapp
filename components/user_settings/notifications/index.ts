@@ -9,7 +9,7 @@ import {getConfig} from 'mattermost-redux/selectors/entities/general';
 import {GlobalState} from 'mattermost-redux/types/store';
 import {GenericAction} from 'mattermost-redux/types/actions';
 
-import UserSettingsNotifications from './user_settings_notifications.tsx';
+import UserSettingsNotifications from './user_settings_notifications';
 
 function mapStateToProps(state: GlobalState) {
     const config = getConfig(state);
