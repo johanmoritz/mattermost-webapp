@@ -101,9 +101,9 @@ Gabriel: 2.5 hours
 
 Discussed report writing with Kasper and typescript conventions in repository with Robin and Adam.
 
-Kasper: 2.5 hours
+Kasper: 4.5 hours
 
-Discussed report writing with Gabriel and to find the actual issue to work on with Robin. 
+Looking for new projects with Johan, discussed report writing with Gabriel and to find the actual issue to work on with Robin. 
 
 3. reading documentation;
 
@@ -111,7 +111,7 @@ Gabriel: 3 hours
 
 First off I looked through the mattermost [documentation](https://developers.mattermost.com/contribute/webapp/) to learn more about how the project is set up and how components and testing is done in the project which they described quite nicely. After this, I had to take a closer look at how typescript worked, to learn it basically, and related issues to see what the convention was when refactoring.
 
-Kasper: 4 hours
+Kasper: 3 hours
 
 I went through the same process as Gabriel.
 
@@ -154,7 +154,7 @@ Gabriel: 5 hours
 
 Not a lot of code had to be changed in my assigned file, just took a little bit for me to figure out how typescript properly worked. Most of my time was spent pair-programming with Kasper on the manage_auto_responder file.
 
-Kasper: 8 hours
+Kasper: 6 hours
 
 Mainly worked on manage_auto_responder file and manage_auto_responder.test file. Had to change proptypes to Props in manage_auto_responder file and move them outside of the function and update some parameters. There was some issue with some of the props and I had to get in touch with the developers whom gave me premission to add the props in autosize_textarea. Gabrial pair-programmed with me on manage_auto_responder.
 
